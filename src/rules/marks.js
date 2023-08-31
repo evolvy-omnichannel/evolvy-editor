@@ -158,20 +158,16 @@ export const supertextRegex = /(\S*[^\s^]*)(\^([^\s^][^^]*[^\s^]|[^\s^])\^)$/;
  * @returns {InputRule[]}
  */
 function getStrongInputRules(schema) {
-  // **string** or __strong__ should bold the text
+  // *string* should bold the text
 
   const markLength = 2;
-  const doubleUnderscoreRule = createInputRule(
-    strongRegex1,
-    addMark(schema.marks.strong, schema, markLength, '__')
+
+  const asterixRule = createInputRule(
+    italicRegex2,
+    addMark(schema.marks.em, schema, markLength, '*')
   );
 
-  const doubleAsterixRule = createInputRule(
-    strongRegex2,
-    addMark(schema.marks.strong, schema, markLength, '**')
-  );
-
-  return [doubleUnderscoreRule, doubleAsterixRule];
+  return [asterixRule];
 }
 
 /**
@@ -181,7 +177,7 @@ function getStrongInputRules(schema) {
  * @returns {InputRule[]}
  */
 function getItalicInputRules(schema) {
-  // *string* or _string_ should italic the text
+  // _string_ should italic the text
   const markLength = 1;
 
   const underscoreRule = createInputRule(
@@ -189,12 +185,12 @@ function getItalicInputRules(schema) {
     addMark(schema.marks.em, schema, markLength, '_')
   );
 
-  const asterixRule = createInputRule(
-    italicRegex2,
-    addMark(schema.marks.em, schema, markLength, '*')
-  );
+  // const asterixRule = createInputRule(
+  //   italicRegex2,
+  //   addMark(schema.marks.em, schema, markLength, '*')
+  // );
 
-  return [underscoreRule, asterixRule];
+  return [underscoreRule];
 }
 
 /**

@@ -69,8 +69,8 @@ export const text = (state, node) => {
 };
 
 export const em = {
-  open: '*',
-  close: '*',
+  open: '_',
+  close: '_',
   mixable: true,
   expelEnclosingWhitespace: true,
 };
@@ -88,8 +88,8 @@ export const strike = {
   expelEnclosingWhitespace: true,
 };
 export const strong = {
-  open: '**',
-  close: '**',
+  open: '*',
+  close: '*',
   mixable: true,
   expelEnclosingWhitespace: true,
 };
