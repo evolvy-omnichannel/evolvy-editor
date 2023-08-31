@@ -160,7 +160,7 @@ export const supertextRegex = /(\S*[^\s^]*)(\^([^\s^][^^]*[^\s^]|[^\s^])\^)$/;
 function getStrongInputRules(schema) {
   // *string* should bold the text
 
-  const markLength = 2;
+  const markLength = 1;
 
   const asterixRule = createInputRule(
     italicRegex2,
