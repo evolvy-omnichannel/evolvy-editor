@@ -164,7 +164,7 @@ function getStrongInputRules(schema) {
 
   const asterixRule = createInputRule(
     italicRegex2,
-    addMark(schema.marks.em, schema, markLength, '*')
+    addMark(schema.marks.strong, schema, markLength, '*')
   );
 
   return [asterixRule];
