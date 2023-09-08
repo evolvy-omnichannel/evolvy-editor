@@ -58,6 +58,10 @@ export class MessageMarkdownTransformer {
   }
 
   parse(content) {
+    const boldRegex = /\*{1}(.*?)\*{1}/g;
+    const italicRegex = /_{1}(.*?)_{1}/g;
+    content = content.replace(boldRegex, '**$1**');
+    content = content.replace(italicRegex, '*$1*');
     return this.markdownParser.parse(content);
   }
 }
