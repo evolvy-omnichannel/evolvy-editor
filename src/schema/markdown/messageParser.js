@@ -59,13 +59,13 @@ export class MessageMarkdownTransformer {
 
   parse(content) {
     content = content.replace(/(\S*[^\s\*]*)(\*([^\s\*][^\*]*[^\s\*]|[^\s\*])\*)/g, (text) => {
-      const boldRegex = /\*{1}(.*?)\*{1}/g;
+      const boldRegex = /\*(.*)\*/;
       const newText = text.replace(boldRegex, '**$1**');
       return newText;
     });
 
     content = content.replace(/(\S*[^\s\_]*)(\_([^\s\_][^\_]*[^\s\_]|[^\s\_])\_)/g, (text) => {
-      const italicRegex = /_{1}(.*?)_{1}/g;
+      const italicRegex = /_(.*)_/;
       const newText = text.replace(italicRegex, '*$1*');
       return newText;
     });
