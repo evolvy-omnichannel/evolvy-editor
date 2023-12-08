@@ -2,7 +2,7 @@
   "name": "@chatwoot/prosemirror-schema",
   "version": "1.0.3",
   "description": "Schema setup for using prosemirror in chatwoot. Based on 👉 https://github.com/ProseMirror/prosemirror-example-setup/",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
