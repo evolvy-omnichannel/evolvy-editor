@@ -45,6 +45,19 @@ export const baseNodesMdToPmMapping = {
     block: 'ordered_list',
     attrs: tok => ({ order: +tok.attrGet('order') || 1 }),
   },
+  image: {
+    node: 'image',
+    getAttrs: (tok) => {
+      const src = tok.attrGet('src');
+      const heightMatch = src.match(/cw_image_height=(\d+)px/);
+      return {
+        src,
+        title: tok.attrGet('title') || null,
+        alt: (tok.children[0] && tok.children[0].content) || null,
+        height: heightMatch ? `${heightMatch[1]}px` : null
+      };
+    },
+  },
 };
 
 export const baseMarksMdToPmMapping = {
